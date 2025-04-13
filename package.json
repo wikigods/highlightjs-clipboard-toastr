@@ -1,0 +1,43 @@
+{
+  "name": "highlightjs-clipboard-toastr",
+  "version": "1.0.0",
+  "description": "Auto-enhanced code blocks with Highlight.js, clipboard copy and Toastr notifications",
+  "main": "dist/hl-clip-toast.min.js",
+  "scripts": {
+    "build": "npm-run-all --parallel css-example js-min js-example plugins",
+    "dev": "npm-run-all --parallel watch:* sync plugins",
+    "sync": "browser-sync start --server --files *.html pages/ dist/",
+    "watch:scss": "sass --watch build/scss/example.scss:dist/example.min.css --style=compressed --load-path=node_modules",
+    "watch:js-min": "esbuild build/hl-clip-toast.js --bundle --minify --outdir=dist --watch",
+    "watch:js-example": "esbuild build/example.js --bundle --minify --outdir=dist --watch",
+    "css-example": "sass build/scss/example.scss dist/example.min.css --no-source-map --style=compressed --load-path=node_modules",
+    "js-min": "esbuild build/hl-clip-toast.js --bundle --minify --outdir=dist",
+    "js-example": "esbuild build/example.js --bundle --minify --outdir=dist",
+    "plugins": "node build/npm/Publish.js -v"
+  },
+  "keywords": [
+    "highlight.js",
+    "clipboard",
+    "toastr",
+    "copy",
+    "plugin",
+    "code"
+  ],
+  "author": "TuNombre",
+  "license": "MIT",
+  "devDependencies": {
+    "browser-sync": "^3.0.4",
+    "esbuild": "^0.25.2",
+    "fs-extra": "^11.3.0",
+    "npm-run-all": "^4.1.5",
+    "sass": "^1.86.3"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.5",
+    "bootstrap-icons": "^1.11.3",
+    "highlight.js": "^11.11.1",
+    "toastr": "^2.1.4"
+  }
+}

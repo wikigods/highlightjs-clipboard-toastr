@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Ejemplo Highlight + Clipboard</title>
+        <link href="./dist/example.min.css" rel="stylesheet">
+        <link href="./plugins/toastr.min.css" rel="stylesheet">
+        <link href="./plugins/codepen-embed.css" rel="stylesheet">
+        <link href="./plugins/fontawesome-free/css/all.css" rel="stylesheet">
+    </head>
+    <body>
+        <div class="d-flex flex-column vh-100 justify-content-between">
+            <header>
+                <nav class="navbar navbar-expand-lg bg-dark">
+                    <div class="container">
+                        <a class="navbar-brand" href="./index.html">Highlightjs Clipboard Toastr</a>
+                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                        </button>
+                        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav ms-auto">
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./index.html">Bootstrap Icons</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link active" aria-current="page" href="./index2.html">Font Awesome 6</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+
+            <main class="py-4">
+                <div class="container">
+                    <div class="card border-0 mb-3">
+                        <div class="card-header bg-primary">
+                            Example JS Font Awesome Codepen Embed
+                        </div>
+                        <div class="card-body bg-secondary">
+                            <pre><code class="language-js">console.log('Hola mundo');</code></pre>
+                        </div>
+                    </div>
+                    <div class="card border-0 mb-3">
+                        <div class="card-header bg-primary">
+                            Example PHP Font Awesome Codepen Embed
+                        </div>
+                        <div class="card-body bg-secondary">
+                            <pre><code class="language-php">&lt;?php echo "Hola mundo"; ?&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+            <footer class="bg-dark text-center py-3 shadow">
+                Made by WikiGods.
+            </footer>
+        </div>
+
+        <script src="./dist/example.js"></script>
+        <script>
+            hct.fire({
+                iconDefault: 'fa-solid fa-clipboard',
+                iconSuccess: 'fa-solid fa-clipboard-check',
+                iconResetDelay: 2000,
+                messageSuccess: '¡Copiado!',
+                messageError: 'Ups, no se pudo copiar',
+                messageClipboardUnsupported: 'Tu navegador no soporta copiar',
+                buttonClass: 'btn btn-sm btn-success position-absolute top-0 end-0 m-2',
+                wrapperClass: 'position-relative',
+                closeButton: true,
+                progressBar: true,
+                timeOut: 3000,
+                validateClasses: true
+            });
+        </script>
+    </body>
+</html>
