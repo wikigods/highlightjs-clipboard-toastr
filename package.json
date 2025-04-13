@@ -21,10 +21,20 @@
     "toastr",
     "copy",
     "plugin",
-    "code"
+    "code",
+    "bootstrap 5",
+    "fontawesome",
+    "bootstrap-icons"
   ],
-  "author": "TuNombre",
+  "author": "WikiGods",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/wikigods/highlightjs-clipboard-toastr.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wikigods/highlightjs-clipboard-toastr/issues"
+  },
   "devDependencies": {
     "browser-sync": "^3.0.4",
     "esbuild": "^0.25.2",
