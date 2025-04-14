@@ -79,6 +79,11 @@ const coreInstance = new HCT({
 coreInstance.fire(); // Iniciar
 ```
 ### 🧪 Consideraciones
-Este paquete requiere que los bloques <pre><code> ya estén resaltados por highlight.js.
+Este paquete requiere que los bloques`<pre><code>` ya estén resaltados por highlight.js.
 Puedes usar tanto Bootstrap Icons como FontAwesome (según tu preferencia).
 Asegúrate de que todos los estilos estén correctamente cargados si usas archivos .min.js.
+
+## License
+
+HighlightjsClipboardToastr is an open source project by HighlightjsClipboardToastr that is licensed under [MIT](https://opensource.org/licenses/MIT).
+HighlightjsClipboardToastr  reserves the right to change the license of future releases.
