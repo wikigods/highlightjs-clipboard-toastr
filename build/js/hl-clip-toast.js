@@ -1,3 +1,3 @@
-import hct from '../js/index';
+import hct from '../js/core';
 
 window.hct = hct;
