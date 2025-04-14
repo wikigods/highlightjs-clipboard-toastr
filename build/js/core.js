@@ -2,6 +2,13 @@ class Core {
     // Default class strings
     static DEFAULT_BUTTON_CLASS = 'btn btn-sm btn-primary position-absolute top-0 end-0 m-2 clipboard-btn';
     static DEFAULT_WRAPPER_CLASS = 'position-relative';
+    static DEFAULT_ICON = 'bi bi-clipboard';
+    static DEFAULT_ICON_SUCCESS = 'bi bi-check-lg';
+    static DEFAULT_MESSAGE_SUCCESS = 'Code copied to clipboard';
+    static DEFAULT_MESSAGE_ERROR = 'Error copying the code';
+    static DEFAULT_MESSAGE_UNSUPPORTED = 'Clipboard API is not available.';
+    static DEFAULT_ICON_DELAY = 1500;
+    static DEFAULT_ICON_TIMEOUT = 1500;
 
     // Default valid class lists (used if validation is enabled)
     static defaultValidButtonClasses = [
@@ -15,17 +22,17 @@ class Core {
 
     constructor(config = {}) {
         this.config = {
-            iconDefault: 'bi bi-clipboard',
-            iconSuccess: 'bi bi-check-lg',
-            iconResetDelay: 2000,
-            messageSuccess: 'Code copied to clipboard',
-            messageError: 'Error copying the code',
-            messageClipboardUnsupported: 'Clipboard API is not available.',
+            iconDefault: Core.DEFAULT_ICON ,
+            iconSuccess: Core.DEFAULT_ICON_SUCCESS,
+            iconResetDelay: Core.DEFAULT_ICON_DELAY,
+            messageSuccess: Core.DEFAULT_MESSAGE_SUCCESS,
+            messageError: Core.DEFAULT_MESSAGE_ERROR,
+            messageClipboardUnsupported: Core.DEFAULT_MESSAGE_UNSUPPORTED,
             buttonClass: Core.DEFAULT_BUTTON_CLASS,
             wrapperClass: Core.DEFAULT_WRAPPER_CLASS,
-            closeButton: true,
-            progressBar: true,
-            timeOut: 3000,
+            closeButton: false,
+            progressBar: false,
+            timeOut: Core.DEFAULT_ICON_TIMEOUT,
             validateClasses: true,
             validButtonClasses: Core.defaultValidButtonClasses,
             validWrapperClasses: Core.defaultValidWrapperClasses,
@@ -72,27 +79,27 @@ class Core {
         button.className = finalButtonClass;
 
         const icon = document.createElement('i');
-        icon.className = this.config.iconDefault || 'bi bi-clipboard';
+        icon.className = this.config.iconDefault || Core.DEFAULT_ICON ;
         button.appendChild(icon);
 
         button.addEventListener('click', () => {
             if (!navigator.clipboard) {
-                toastr.warning(this.config.messageClipboardUnsupported || 'Clipboard API is not available.');
+                toastr.warning(this.config.messageClipboardUnsupported || Core.DEFAULT_MESSAGE_UNSUPPORTED);
                 return;
             }
 
             const code = codeElement.textContent;
 
             navigator.clipboard.writeText(code).then(() => {
-                icon.className = this.config.iconSuccess || 'bi bi-check-lg';
+                icon.className = this.config.iconSuccess || Core.DEFAULT_ICON_SUCCESS;
 
                 setTimeout(() => {
-                    icon.className = this.config.iconDefault || 'bi bi-clipboard';
-                }, this.config.iconResetDelay || 1500);
+                    icon.className = this.config.iconDefault || Core.DEFAULT_ICON ;
+                }, this.config.iconResetDelay || Core.DEFAULT_ICON_DELAY);
 
-                toastr.success(this.config.messageSuccess || 'Code copied to clipboard');
+                toastr.success(this.config.messageSuccess || Core.DEFAULT_MESSAGE_SUCCESS);
             }).catch(() => {
-                toastr.error(this.config.messageError || 'Error copying the code');
+                toastr.error(this.config.messageError || Core.DEFAULT_MESSAGE_ERROR);
             });
         });
 
@@ -133,7 +140,7 @@ class Core {
         toastr.options = {
             closeButton: this.config.closeButton ?? false,
             progressBar: this.config.progressBar ?? false,
-            timeOut: this.config.timeOut ?? 1500,
+            timeOut: this.config.timeOut ?? Core.DEFAULT_ICON_TIMEOUT,
             escapeHtml: true,
         };
 
@@ -142,8 +149,8 @@ class Core {
         });
     }
 
-    greet() {
-        console.log(`Hello from Core! Config:`, this.config);
+    info() {
+        console.log(`Info Config:`, this.config);
     }
 }
 

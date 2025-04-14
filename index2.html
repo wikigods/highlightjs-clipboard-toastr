@@ -63,7 +63,7 @@
         <script src="./dist/js/example.min.js"></script>
         <script src="./dist/js/hl-clip-toast.min.js"></script>
         <script>
-            hct.fire({
+            const coreInstance = new HCT({
                 iconDefault: 'fa-solid fa-clipboard',
                 iconSuccess: 'fa-solid fa-clipboard-check',
                 iconResetDelay: 2000,
@@ -77,6 +77,7 @@
                 timeOut: 3000,
                 validateClasses: true
             });
+            coreInstance.fire();
         </script>
     </body>
 </html>

@@ -59,12 +59,12 @@
                 Made by WikiGods.
             </footer>
         </div>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-        <script src="./dist/js/hl-clip-toast.js"></script>
+        <script src="./dist/js/hl-clip-toast.min.js"></script>
         <script>
-            hct.fire({
+            const coreInstance = new HCT({
                 iconDefault: 'fa-solid fa-clipboard',
                 iconSuccess: 'fa-solid fa-clipboard-check',
                 iconResetDelay: 2000,
@@ -78,6 +78,7 @@
                 timeOut: 3000,
                 validateClasses: true
             });
+            coreInstance.fire();
         </script>
     </body>
 </html>
