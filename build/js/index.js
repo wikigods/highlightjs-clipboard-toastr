@@ -1,7 +1,3 @@
-// hl-clip-toast.js
-import hljs from 'highlight.js';
-import toastr from 'toastr';
-
 // Default class strings
 const DEFAULT_BUTTON_CLASS = 'btn btn-sm btn-primary position-absolute top-0 end-0 m-2 clipboard-btn';
 const DEFAULT_WRAPPER_CLASS = 'position-relative';

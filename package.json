@@ -8,11 +8,11 @@
     "dev": "npm-run-all --parallel watch:* sync plugins",
     "sync": "browser-sync start --server --files *.html pages/ dist/",
     "watch:scss": "sass --watch build/scss/example.scss:dist/example.min.css --style=compressed --load-path=node_modules",
-    "watch:js-min": "esbuild build/hl-clip-toast.js --bundle --minify --outdir=dist --watch",
-    "watch:js-example": "esbuild build/example.js --bundle --minify --outdir=dist --watch",
+    "watch:js-min": "esbuild build/js/hl-clip-toast.js --bundle --minify --outdir=dist --watch",
+    "watch:js-example": "esbuild build/js/example.js --bundle --minify --outdir=dist --watch",
     "css-example": "sass build/scss/example.scss dist/example.min.css --no-source-map --style=compressed --load-path=node_modules",
-    "js-min": "esbuild build/hl-clip-toast.js --bundle --minify --outdir=dist",
-    "js-example": "esbuild build/example.js --bundle --minify --outdir=dist",
+    "js-min": "esbuild build/js/hl-clip-toast.js --bundle --minify --outdir=dist",
+    "js-example": "esbuild build/js/example.js --bundle --minify --outdir=dist",
     "plugins": "node build/npm/Publish.js -v"
   },
   "keywords": [
