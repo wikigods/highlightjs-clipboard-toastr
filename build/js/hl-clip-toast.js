@@ -1,3 +1,4 @@
-import hct from '../js/core';
+import Core from './Core';
 
-window.hct = hct;
+// Exponer Core en el objeto global `window` como `HCT`
+window.HCT = Core;

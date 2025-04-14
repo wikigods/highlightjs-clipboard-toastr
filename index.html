@@ -3,10 +3,10 @@
     <head>
         <meta charset="UTF-8" />
         <title>Ejemplo Highlight + Clipboard</title>
-        <link href="./dist/css/example.css" rel="stylesheet">
-        <link href="./plugins/toastr.min.css" rel="stylesheet">
-        <link href="./plugins/atom-one-dark.css" rel="stylesheet">
-        <link href="./plugins/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">
+<!--        <link href="./dist/css/example.css" rel="stylesheet">-->
+<!--        <link href="./plugins/toastr.min.css" rel="stylesheet">-->
+<!--        <link href="./plugins/atom-one-dark.css" rel="stylesheet">-->
+<!--        <link href="./plugins/bootstrap-icons/font/bootstrap-icons.min.css" rel="stylesheet">-->
     </head>
     <body>
         <div class="d-flex flex-column vh-100 justify-content-between">
@@ -60,10 +60,15 @@
             </footer>
         </div>
 
-        <script src="./dist/js/example.min.js"></script>
+<!--        <script src="./dist/js/example.min.js"></script>-->
         <script src="./dist/js/hl-clip-toast.min.js"></script>
         <script>
-            hct.fire();
+            // Ahora `HCT` estará disponible globalmente como una clase
+            const coreInstance = new HCT({ message: 'Hello, World!' });
+            coreInstance.greet();  // Esto debería funcionar correctamente
+        </script>
+        <script>
+            // hct.fire();
         </script>
     </body>
 </html>

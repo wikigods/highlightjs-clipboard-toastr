@@ -11,13 +11,13 @@ export default {
     output: [
         {
             dir: 'dist/js',
-            // format: 'esm',
+            format: 'esm',
             sourcemap: true,
             chunkFileNames: '[name]-[hash].js',
         },
         {
             dir: 'dist/js',
-            // format: 'esm',
+            format: 'esm',
             sourcemap: true,
             chunkFileNames: '[name]-[hash].min.js',
             entryFileNames: '[name].min.js',
