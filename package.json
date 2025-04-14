@@ -2,16 +2,6 @@
   "name": "highlightjs-clipboard-toastr",
   "version": "1.0.0",
   "description": "Auto-enhanced code blocks with Highlight.js, clipboard copy and Toastr notifications",
-  "main": "dist/hl-clip-toast.min.js",
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "npm-run-all --parallel watch:* sync plugins",
-    "sync": "browser-sync start --server --files *.html pages/ dist/",
-    "watch:js": "rollup -c --watch",
-    "watch:css": "sass --watch --silence-deprecation=color-functions,global-builtin,mixed-decls,import --no-source-map --style=compressed --load-path=node_modules build/scss/:dist/css/",
-    "css": "sass --silence-deprecation=color-functions,global-builtin,mixed-decls,import --no-source-map --style=compressed --load-path=node_modules build/scss/:dist/css/",
-    "plugins": "node build/npm/Publish.js -v"
-  },
   "keywords": [
     "highlight.js",
     "clipboard",
@@ -23,14 +13,33 @@
     "fontawesome",
     "bootstrap-icons"
   ],
-  "author": "WikiGods",
-  "license": "MIT",
+  "homepage": "https://github.com/wikigods/highlightjs-clipboard-toastr#readme",
+  "bugs": {
+    "url": "https://github.com/wikigods/highlightjs-clipboard-toastr/issues"
+  },
   "repository": {
     "type": "git",
     "url": "git://github.com/wikigods/highlightjs-clipboard-toastr.git"
   },
-  "bugs": {
-    "url": "https://github.com/wikigods/highlightjs-clipboard-toastr/issues"
+  "license": "MIT",
+  "author": "WikiGods",
+  "main": "dist/hl-clip-toast.min.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "npm-run-all --parallel watch:* sync plugins",
+    "sync": "browser-sync start --server --files *.html pages/ dist/",
+    "watch:js": "rollup -c --watch",
+    "watch:css": "sass --watch --silence-deprecation=color-functions,global-builtin,mixed-decls,import --no-source-map --style=compressed --load-path=node_modules build/scss/:dist/css/",
+    "css": "sass --silence-deprecation=color-functions,global-builtin,mixed-decls,import --no-source-map --style=compressed --load-path=node_modules build/scss/:dist/css/",
+    "plugins": "node build/npm/Publish.js -v"
+  },
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2",
+    "@popperjs/core": "^2.11.8",
+    "bootstrap": "^5.3.5",
+    "bootstrap-icons": "^1.11.3",
+    "highlight.js": "^11.11.1",
+    "toastr": "^2.1.4"
   },
   "devDependencies": {
     "@babel/core": "^7.26.10",
@@ -44,13 +53,5 @@
     "rollup": "^2.79.2",
     "rollup-plugin-terser": "^7.0.2",
     "sass": "^1.86.3"
-  },
-  "dependencies": {
-    "@fortawesome/fontawesome-free": "^6.7.2",
-    "@popperjs/core": "^2.11.8",
-    "bootstrap": "^5.3.5",
-    "bootstrap-icons": "^1.11.3",
-    "highlight.js": "^11.11.1",
-    "toastr": "^2.1.4"
   }
 }
